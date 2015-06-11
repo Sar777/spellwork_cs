@@ -2022,12 +2022,12 @@ namespace SpellWork.Spell
         CR_CRIT_MELEE               = 1 << 0x07,
         CR_CRIT_RANGED              = 1 << 0x08,
         CR_CRIT_SPELL               = 1 << 0x09,
-        CR_HIT_TAKEN_MELEE          = 1 << 0x0A,
+        CR_MULTISTRIKE              = 1 << 0x0A,
         CR_HIT_TAKEN_RANGED         = 1 << 0x0B,
         CR_HIT_TAKEN_SPELL          = 1 << 0x0C,
         CR_CRIT_TAKEN_MELEE         = 1 << 0x0D,
         CR_CRIT_TAKEN_RANGED        = 1 << 0x0E,
-        CR_CRIT_TAKEN_SPELL         = 1 << 0x0F,
+        CR_LIFESTEAL                = 1 << 0x0F,
         CR_HASTE_MELEE              = 1 << 0x10,
         CR_HASTE_RANGED             = 1 << 0x11,
         CR_HASTE_SPELL              = 1 << 0x12,
@@ -2037,6 +2037,9 @@ namespace SpellWork.Spell
         CR_EXPERTISE                = 1 << 0x16,
         CR_ARMOR_PENETRATION        = 1 << 0x17,
         CR_MASTERY                  = 1 << 0x18,
+        CR_UNK1                     = 1 << 0x19,
+        CR_UNK2                     = 1 << 0x20,
+        CR_VERSALITY                = 1 << 0x21,
     };
 
     public enum UnitMods
