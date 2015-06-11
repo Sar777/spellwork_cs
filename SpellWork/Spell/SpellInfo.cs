@@ -554,6 +554,7 @@ namespace SpellWork.Spell
                     _rtb.Append((UnitMods)misc);
                     break;
                 case AuraType.SPELL_AURA_MOD_RATING:
+                case AuraType.SPELL_AURA_MOD_RATING_BONUS_PCT:
                     _rtb.Append((CombatRating)misc);
                     break;
                 case AuraType.SPELL_AURA_ADD_FLAT_MODIFIER:
