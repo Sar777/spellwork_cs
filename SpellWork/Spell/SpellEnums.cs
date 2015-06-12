@@ -764,7 +764,7 @@ namespace SpellWork.Spell
         SPELL_AURA_402                                          = 402,
         SPELL_AURA_403                                          = 403,
         SPELL_AURA_404                                          = 404,
-        SPELL_AURA_MOD_RATING_BONUS_PCT                                          = 405,
+        SPELL_AURA_MOD_RATING_BONUS_PCT                         = 405,
         SPELL_AURA_406                                          = 406,
         SPELL_AURA_MOD_FEAR_2                                   = 407,  // NYI
         SPELL_AURA_408                                          = 408,
@@ -824,8 +824,8 @@ namespace SpellWork.Spell
         SPELL_AURA_462                                          = 462,
         SPELL_AURA_CONVER_CRIT_RATING_PCT_TO_PARRY_RATING       = 463, // NYI
         SPELL_AURA_464                                          = 464,
-        SPELL_AURA_465                                          = 465,
-        SPELL_AURA_466                                          = 466,
+        SPELL_AURA_BONUS_ARMOR                                  = 465,
+        SPELL_AURA_BONUS_ARMOR_PCT                              = 466,
         SPELL_AURA_467                                          = 467,
         SPELL_AURA_468                                          = 468,
         SPELL_AURA_469                                          = 469,
