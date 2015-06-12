@@ -802,7 +802,7 @@ namespace SpellWork.Spell
         SPELL_AURA_MOD_BONUS_MULTISTRIKE                        = 440,
         SPELL_AURA_MOD_MULTISTRIKE                              = 441,
         SPELL_AURA_442                                          = 442,
-        SPELL_AURA_443                                          = 443,
+        SPELL_AURA_MOD_LIFESTEAL                                = 443,
         SPELL_AURA_444                                          = 444,
         SPELL_AURA_445                                          = 445,
         SPELL_AURA_446                                          = 446,
