@@ -746,7 +746,7 @@ namespace SpellWork.Spell
         SPELL_AURA_384                                          = 384,
         SPELL_AURA_CHANCE_OVERRIDE_AUTOATTACK_WITH_SPELL_ON_SELF= 385,  // NYI (with triggered spell cast by the initial caster?)
         SPELL_AURA_386                                          = 386,
-        SPELL_AURA_387                                          = 387,
+        SPELL_AURA_MOD_DISCOUNT_USE_VS_TRANSM                   = 387,
         SPELL_AURA_MOD_TAXI_FLIGHT_SPEED                        = 388,  // NYI
         SPELL_AURA_389                                          = 389,
         SPELL_AURA_390                                          = 390,
@@ -772,13 +772,13 @@ namespace SpellWork.Spell
         SPELL_AURA_410                                          = 410,
         SPELL_AURA_MOD_MAX_CHARGES                              = 411,
         SPELL_AURA_412                                          = 412,
-        SPELL_AURA_413                                          = 413,
+        SPELL_AURA_MOD_PARRY_PERCENT_2                          = 413,
         SPELL_AURA_414                                          = 414,
         SPELL_AURA_415                                          = 415,
         SPELL_AURA_416                                          = 416,
         SPELL_AURA_417                                          = 417,
-        SPELL_AURA_418                                          = 418,
-        SPELL_AURA_419                                          = 419,
+        SPELL_AURA_MOD_INCREASE_POWER                           = 418,
+        SPELL_AURA_MOD_BASE_MANA_PCT                            = 419,
         SPELL_AURA_MOD_BATTLE_PET_XP_PCT                        = 420,  // NYI
         SPELL_AURA_421                                          = 421,
         SPELL_AURA_422                                          = 422,
@@ -2040,6 +2040,15 @@ namespace SpellWork.Spell
         CR_UNK1                     = 1 << 26,
         CR_UNK2                     = 1 << 27,
         CR_VERSATILITY              = 1 << 28,
+    };
+
+    public enum Stats
+    {
+        STAT_STRENGTH                   = 0,
+        STAT_AGILITY                    = 1,
+        STAT_STAMINA                    = 2,
+        STAT_INTELLECT                  = 3,
+        STAT_SPIRIT                     = 4
     };
 
     public enum UnitMods

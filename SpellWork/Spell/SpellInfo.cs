@@ -561,6 +561,12 @@ namespace SpellWork.Spell
                 case AuraType.SPELL_AURA_ADD_PCT_MODIFIER:
                     _rtb.Append((SpellModOp)misc);
                     break;
+                case AuraType.SPELL_AURA_MOD_TOTAL_STAT_PERCENTAGE:
+                    _rtb.Append((Stats)misc);
+                    break;
+                case AuraType.SPELL_AURA_MOD_INCREASE_POWER:
+                    _rtb.Append((Powers)misc);
+                    break;
                 // todo: more case
                 default:
                     _rtb.Append(misc);
