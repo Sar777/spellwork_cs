@@ -1,8 +1,6 @@
 
 *.suo
 *.user
-WoWZStarter/obj/*
-WoWZStarter/bin/
 *.orig
 *.rej
 *.patch
