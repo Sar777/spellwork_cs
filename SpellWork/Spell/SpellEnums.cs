@@ -977,7 +977,7 @@ namespace SpellWork.Spell
         TARGET_UNK_129                          = 129,
         TARGET_UNK_130                          = 130,
         TARGET_UNK_131                          = 131,
-        TARGET_UNK_132                          = 132,
+        TARGET_UNIT_TARGET_AREA_ALLY            = 132,
         TARGET_UNK_133                          = 133,
         TARGET_UNK_134                          = 134,
         TARGET_UNK_135                          = 135,
