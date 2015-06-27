@@ -134,7 +134,7 @@ namespace SpellWork.Extensions
         public static void SetCheckedItemFromFlag(this CheckedListBox name, uint value)
         {
             for (var i = 0; i < name.Items.Count; ++i)
-                name.SetItemChecked(i, ((value / (1U << (i - 1))) % 2) != 0);
+                name.SetItemChecked(i, ((value / (1U << i)) % 2) != 0);
         }
 
         public static uint GetFlagsValue(this CheckedListBox name)

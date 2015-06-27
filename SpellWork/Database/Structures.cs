@@ -24,6 +24,7 @@
                 SpellFamilyMask[0].ToString(),
                 SpellFamilyMask[1].ToString(),
                 SpellFamilyMask[2].ToString(),
+                SpellFamilyMask[3].ToString(),
                 ProcFlags.ToString(),
                 ProcEx.ToString(),
                 PpmRate.ToString(),
