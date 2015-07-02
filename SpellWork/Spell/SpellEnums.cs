@@ -2031,7 +2031,7 @@ namespace SpellWork.Spell
     [Flags]
     public enum CombatRating
     {
-        CR_WEAPON_SKILL             = 1 << 0,
+        CR_UNUSED_1                 = 1 << 0,
         CR_DEFENSE_SKILL            = 1 << 1,
         CR_DODGE                    = 1 << 2,
         CR_PARRY                    = 1 << 3,
@@ -2043,23 +2043,26 @@ namespace SpellWork.Spell
         CR_CRIT_RANGED              = 1 << 9,
         CR_CRIT_SPELL               = 1 << 10,
         CR_MULTISTRIKE              = 1 << 11,
-        CR_HIT_TAKEN_RANGED         = 1 << 12,
-        CR_HIT_TAKEN_SPELL          = 1 << 13,
+        CR_READINESS                = 1 << 12,
+        CR_SPEED                    = 1 << 13,
         CR_CRIT_TAKEN_MELEE         = 1 << 14,
         CR_CRIT_TAKEN_RANGED        = 1 << 15,
         CR_LIFESTEAL                = 1 << 16,
         CR_HASTE_MELEE              = 1 << 17,
         CR_HASTE_RANGED             = 1 << 18,
         CR_HASTE_SPELL              = 1 << 19,
-        CR_WEAPON_SKILL_MAINHAND    = 1 << 20,
-        CR_WEAPON_SKILL_OFFHAND     = 1 << 21,
+        CR_AVOIDANCE                = 1 << 20,
+        CR_UNUSED_2                 = 1 << 21,
         CR_WEAPON_SKILL_RANGED      = 1 << 22,
         CR_EXPERTISE                = 1 << 23,
         CR_ARMOR_PENETRATION        = 1 << 24,
         CR_MASTERY                  = 1 << 25,
-        CR_UNK1                     = 1 << 26,
-        CR_UNK2                     = 1 << 27,
-        CR_VERSATILITY              = 1 << 28,
+        CR_UNUSED_3                 = 1 << 26,
+        CR_UNUSED_4                 = 1 << 27,
+        CR_VERSATILITY_DAMAGE_DONE  = 1 << 28,
+        CR_UNUSED_5                 = 1 << 29,
+        // placeholder
+        CR_VERSATILITY_DAMAGE_TAKEN = 1 << 30,
     };
 
     public enum Stats
