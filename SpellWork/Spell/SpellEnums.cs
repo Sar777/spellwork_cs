@@ -823,7 +823,7 @@ namespace SpellWork.Spell
         SPELL_AURA_461                                          = 461,
         SPELL_AURA_462                                          = 462,
         SPELL_AURA_CONVER_CRIT_RATING_PCT_TO_PARRY_RATING       = 463, // NYI
-        SPELL_AURA_464                                          = 464,
+        SPELL_AURA_MOD_ATTACK_POWER_OF_BONUS_ARMOR              = 464,
         SPELL_AURA_BONUS_ARMOR                                  = 465,
         SPELL_AURA_BONUS_ARMOR_PCT                              = 466,
         SPELL_AURA_467                                          = 467,
