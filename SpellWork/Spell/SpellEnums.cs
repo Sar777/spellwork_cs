@@ -2061,7 +2061,6 @@ namespace SpellWork.Spell
         CR_UNUSED_4                 = 1 << 27,
         CR_VERSATILITY_DAMAGE_DONE  = 1 << 28,
         CR_UNUSED_5                 = 1 << 29,
-        // placeholder
         CR_VERSATILITY_DAMAGE_TAKEN = 1 << 30,
     };
 
