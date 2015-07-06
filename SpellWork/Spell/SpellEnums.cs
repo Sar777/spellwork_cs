@@ -829,6 +829,7 @@ namespace SpellWork.Spell
         SPELL_AURA_467                                          = 467,
         SPELL_AURA_468                                          = 468,
         SPELL_AURA_469                                          = 469,
+        SPELL_AURA_470                                          = 470,
         SPELL_AURA_MOD_BONUS_VERSATILITY                        = 471,
         SPELL_AURA_472                                          = 472,
         SPELL_AURA_473                                          = 473,
