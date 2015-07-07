@@ -568,7 +568,7 @@ namespace SpellWork.Spell
                     _rtb.Append((Powers)misc);
                     break;
                 case AuraType.SPELL_AURA_MOD_SHAPESHIFT:
-                    _rtb.Append((ShapeshiftFormMask)misc);
+                    _rtb.Append((ShapeshiftForm)misc);
                     break;
                 // todo: more case
                 default:
