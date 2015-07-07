@@ -416,7 +416,7 @@ namespace SpellWork.Forms
                         where
                             spell.SpellFamilyName == ProcInfo.SpellProc.SpellFamilyName &&
                             spell.SpellFamilyFlags.ContainsElement(mask)
-                        join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellId into temp1
+                        join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellID into temp1
                         from skill in temp1.DefaultIfEmpty(new SkillLineAbilityEntry())
                         //join skl in DBC.SkillLine on Skill.Value.SkillId equals skl.Value.ID into temp2
                         //from SkillLine in temp2.DefaultIfEmpty()
@@ -426,11 +426,11 @@ namespace SpellWork.Forms
                             {
                                 SpellID = spell.ID,
                                 SpellName = spell.SpellNameRank + " " + spell.Description,
-                                skill.SkillId
+                                skill.SkillLine
                             };
 
             foreach (var lvi in
-                query.Select(str => new ListViewItem(new[] {str.SpellID.ToString(), str.SpellName}) {ImageKey = str.SkillId != 0 ? "plus.ico" : "munus.ico"}))
+                query.Select(str => new ListViewItem(new[] { str.SpellID.ToString(), str.SpellName }) { ImageKey = str.SkillLine != 0 ? "plus.ico" : "munus.ico" }))
                 _lvProcAdditionalInfo.Items.Add(lvi);
 
             GetProcAttribute(ProcInfo.SpellProc);
@@ -554,7 +554,7 @@ namespace SpellWork.Forms
             sb.AppendFormatIfNotNull(" procEx {1} {0}", _tbSqlProcEx.Text.ToInt32(), compare);
 
             var subquery = sb.ToString() == "WHERE" ? string.Empty : sb.ToString();
-            
+
             if (subquery == string.Empty && _tbSqlManual.Text != string.Empty)
                 subquery = "WHERE " + _tbSqlManual.Text;
 

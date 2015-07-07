@@ -19,14 +19,14 @@ namespace SpellWork.Spell
 
             var spells = from spell in DBC.DBC.SpellInfoStore.Values
                          where spell.SpellFamilyName == (uint)spellfamily
-                         join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellId into temp1
+                         join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellID into temp1
                          from skill in temp1.DefaultIfEmpty(new SkillLineAbilityEntry())
-                         join skl in DBC.DBC.SkillLine.Values on skill.SkillId equals skl.Id into temp2
+                         join skl in DBC.DBC.SkillLine.Values on skill.SkillLine equals skl.Id into temp2
                          from skillLine in temp2.DefaultIfEmpty(new SkillLineEntry())
                          select new
                          {
                              spell,
-                             skill.SkillId,
+                             skill.SkillLine,
                              skillLine
                          };
 
@@ -54,7 +54,7 @@ namespace SpellWork.Spell
             foreach (var elem in spells)
             {
                 var spell = elem.spell;
-                var isSkill = elem.SkillId != 0;
+                var isSkill = elem.SkillLine != 0;
 
                 var name    = new StringBuilder();
                 var toolTip = new StringBuilder();
@@ -67,7 +67,7 @@ namespace SpellWork.Spell
 
                 if (isSkill)
                 {
-                    name.AppendFormat("(Skill: ({0}) {1}) ", elem.SkillId, elem.skillLine.Name);
+                    name.AppendFormat("(Skill: ({0}) {1}) ", elem.SkillLine, elem.skillLine.Name);
 
                     toolTip.AppendLine();
                     toolTip.AppendFormatLine("Skill Name: {0}", elem.skillLine.Name);

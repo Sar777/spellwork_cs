@@ -335,8 +335,8 @@ namespace SpellWork.Spell
         {
             var query = from skillLineAbility in DBC.DBC.SkillLineAbility.Records
                         join skillLine in DBC.DBC.SkillLine.Records
-                        on skillLineAbility.SkillId equals skillLine.Id
-                        where skillLineAbility.SpellId == _spell.ID
+                        on skillLineAbility.SkillLine equals skillLine.Id
+                        where skillLineAbility.SpellID == _spell.ID
                         select new
                         {
                             skillLineAbility,
@@ -349,11 +349,11 @@ namespace SpellWork.Spell
             var skill = query.First().skillLineAbility;
             var line =  query.First().skillLine;
 
-            _rtb.AppendFormatLine("Skill (Id {0}) \"{1}\"", skill.SkillId, line.Name);
-            _rtb.AppendFormat("    ReqSkillValue {0}", skill.ReqSkillValue);
+            _rtb.AppendFormatLine("Skill (Id {0}) \"{1}\"", skill.SkillLine, line.Name);
+            _rtb.AppendFormat("    MinSkillLineRank {0}", skill.MinSkillLineRank);
 
-            _rtb.AppendFormat(", Forward Spell = {0}, MinMaxValue ({1}, {2})", skill.ForwardSpellid, skill.MinValue, skill.MaxValue);
-            _rtb.AppendFormat(", CharacterPoints ({0})", skill.CharacterPoints);
+            _rtb.AppendFormat(", SupercedesSpell = {0}, MinMaxValue ({1}, {2})", skill.SupercedesSpell, skill.TrivialSkillLineRankLow, skill.TrivialSkillLineRankHigh);
+            _rtb.AppendFormat(", NumSkillups ({0})", skill.NumSkillUps);
         }
 
         private void AppendSpellEffectInfo()
@@ -431,13 +431,13 @@ namespace SpellWork.Spell
 
                     var query = from spell in DBC.DBC.SpellInfoStore.Values
                                 where spell.SpellFamilyName == _spell.SpellFamilyName && spell.SpellFamilyFlags.ContainsElement(classMask)
-                                join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellId into temp
+                                join sk in DBC.DBC.SkillLineAbility.Values on spell.ID equals sk.SpellID into temp
                                 from skill in temp.DefaultIfEmpty(new SkillLineAbilityEntry())
                                 select new
                                 {
                                     SpellID = spell.ID,
                                     SpellName = spell.SpellNameRank,
-                                    SkillId = skill.SkillId
+                                    SkillId = skill.SkillLine
                                 };
 
                     foreach (var row in query)
