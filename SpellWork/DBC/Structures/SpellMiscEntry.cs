@@ -23,8 +23,6 @@ namespace SpellWork.DBC.Structures
         public uint DurationIndex = 0;                                // 18       m_durationIndex
         public uint RangeIndex = 0;                                   // 19       m_rangeIndex
         public float Speed = 0;                                        // 20       m_speed
-        [StoragePresence(StoragePresenceOption.Include, ArraySize = 2)]
-        public uint[] SpellVisual;                                  // 21-22    m_spellVisualID
         public uint SpellIconID = 0;                                  // 23       m_spellIconID
         public uint ActiveIconID = 0;                                 // 24       m_activeIconID
         public uint SchoolMask = 0;                                   // 25       m_schoolMask

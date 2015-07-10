@@ -12,7 +12,7 @@ namespace SpellWork.DBC
 {
     public static class DBC
     {
-        public const string Version = "SpellWork 6.1.2 (19865)";
+        public const string Version = "SpellWork 6.2.0 (20216)";
         public const uint MaxLevel  = 100;
 
         public const int MaxDbcLocale                 = 16;
@@ -30,12 +30,12 @@ namespace SpellWork.DBC
         public static DBCStorage<SpellAuraOptionsEntry> SpellAuraOptions = new DBCStorage<SpellAuraOptionsEntry>();
         public static DB2Storage<SpellAuraRestrictionsEntry> SpellAuraRestrictions = new DB2Storage<SpellAuraRestrictionsEntry>();
         public static DB2Storage<SpellCastingRequirementsEntry> SpellCastingRequirements = new DB2Storage<SpellCastingRequirementsEntry>();
-        public static DBCStorage<SpellCastTimesEntry> SpellCastTimes = new DBCStorage<SpellCastTimesEntry>();
+        public static DB2Storage<SpellCastTimesEntry> SpellCastTimes = new DB2Storage<SpellCastTimesEntry>();
         public static DBCStorage<SpellCategoriesEntry> SpellCategories = new DBCStorage<SpellCategoriesEntry>();
         public static DB2Storage<SpellClassOptionsEntry> SpellClassOptions = new DB2Storage<SpellClassOptionsEntry>();
         public static DBCStorage<SpellCooldownsEntry> SpellCooldowns = new DBCStorage<SpellCooldownsEntry>();
         public static DBCStorage<SpellDescriptionVariablesEntry> SpellDescriptionVariables = new DBCStorage<SpellDescriptionVariablesEntry>();
-        public static DBCStorage<SpellDurationEntry> SpellDuration = new DBCStorage<SpellDurationEntry>();
+        public static DB2Storage<SpellDurationEntry> SpellDuration = new DB2Storage<SpellDurationEntry>();
         public static DBCStorage<SpellEffectEntry> SpellEffect = new DBCStorage<SpellEffectEntry>();
         public static DBCStorage<SpellEffectScalingEntry> SpellEffectScaling = new DBCStorage<SpellEffectScalingEntry>();
         public static DB2Storage<SpellMiscEntry> SpellMisc = new DB2Storage<SpellMiscEntry>();
@@ -44,14 +44,15 @@ namespace SpellWork.DBC
         public static DBCStorage<SpellLevelsEntry> SpellLevels = new DBCStorage<SpellLevelsEntry>();
         public static DB2Storage<SpellPowerEntry> SpellPower = new DB2Storage<SpellPowerEntry>();
         //public static Dictionary<uint, List<SpellPowerEntry>> _spellPower = new Dictionary<uint, List<SpellPowerEntry>>();
-        public static DBCStorage<SpellRadiusEntry> SpellRadius = new DBCStorage<SpellRadiusEntry>();
-        public static DBCStorage<SpellRangeEntry> SpellRange = new DBCStorage<SpellRangeEntry>();
+        public static DB2Storage<SpellRadiusEntry> SpellRadius = new DB2Storage<SpellRadiusEntry>();
+        public static DB2Storage<SpellRangeEntry> SpellRange = new DB2Storage<SpellRangeEntry>();
         public static DB2Storage<SpellRuneCostEntry> SpellRuneCost = new DB2Storage<SpellRuneCostEntry>();
         public static DBCStorage<SpellScalingEntry> SpellScaling = new DBCStorage<SpellScalingEntry>();
         public static DBCStorage<SpellShapeshiftEntry> SpellShapeshift = new DBCStorage<SpellShapeshiftEntry>();
         public static DBCStorage<SpellTargetRestrictionsEntry> SpellTargetRestrictions = new DBCStorage<SpellTargetRestrictionsEntry>();
         public static Dictionary<uint, List<SpellTargetRestrictionsEntry>> _spellTargetRestrictions = new Dictionary<uint, List<SpellTargetRestrictionsEntry>>();
         public static DB2Storage<SpellTotemsEntry> SpellTotems = new DB2Storage<SpellTotemsEntry>();
+        public static DB2Storage<SpellXSpellVisualEntry> SpellXSpellVisual = new DB2Storage<SpellXSpellVisualEntry>();
 
         public static DB2Storage<ItemEntry> Item = new DB2Storage<ItemEntry>();
         public static DB2Storage<SpellReagentsEntry> SpellReagents = new DB2Storage<SpellReagentsEntry>();
@@ -65,6 +66,7 @@ namespace SpellWork.DBC
         public static Dictionary<uint, SpellInfoHelper> SpellInfoStore = new Dictionary<uint, SpellInfoHelper>();
         public static Dictionary<uint, List<SpellEffectEntry>> SpellEffectLists = new Dictionary<uint, List<SpellEffectEntry>>();
         public static Dictionary<uint, List<uint>> SpellTriggerStore = new Dictionary<uint, List<uint>>();
+        public static Dictionary<uint, SpellXSpellVisualEntry> SpellVisualsBySpell = new Dictionary<uint, SpellXSpellVisualEntry>();
 
         public static void Load()
         {
@@ -163,6 +165,15 @@ namespace SpellWork.DBC
                 DBC._spellTargetRestrictions[tr.SpellId].Add(tr);
             }
             DBC.SpellTargetRestrictions.Clear();
+
+            foreach (var v in DBC.SpellXSpellVisual)
+            {
+                if (v.DifficultyID != 0 || v.PlayerConditionID != 0)
+                    continue;
+
+                if (!DBC.SpellVisualsBySpell.ContainsKey(v.SpellID))
+                    DBC.SpellVisualsBySpell[v.SpellID] = v;
+            }
 
             foreach (var dbcInfo in Spell.Records)
                 SpellInfoStore.Add(dbcInfo.Id, new SpellInfoHelper(dbcInfo));
