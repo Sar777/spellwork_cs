@@ -127,5 +127,10 @@ namespace SpellWork.DBC.Structures
         {
             get { return SpellTotemsId != 0 && DBC.SpellTotems.ContainsKey(SpellTotemsId) ? DBC.SpellTotems[SpellTotemsId] : null; }
         }
+
+        public SpellXSpellVisualEntry Visuals
+        {
+            get { return DBC.SpellVisualsBySpell.ContainsKey(Id) ? DBC.SpellVisualsBySpell[Id] : null; }
+        }
     }
 }

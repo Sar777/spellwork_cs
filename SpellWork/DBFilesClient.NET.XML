@@ -4,36 +4,6 @@
         <name>DBFilesClient.NET</name>
     </assembly>
     <members>
-        <member name="T:DBFilesClient.NET.StoragePresenceAttribute">
-            <summary>
-            Controls how the field is treated by the DBC storage loader.
-            </summary>
-        </member>
-        <member name="M:DBFilesClient.NET.StoragePresenceAttribute.#ctor(DBFilesClient.NET.StoragePresenceOption)">
-            <summary>
-            Initializes a new instance of <see cref="T:DBFilesClient.NET.StoragePresenceAttribute"/>
-            with the specified <see cref="T:DBFilesClient.NET.StoragePresenceOption"/>.
-            </summary>
-            <param name="option">
-            Specifies how the underlying class field should be treated when loading from a DBC storage.
-            </param>
-        </member>
-        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.Option">
-            <summary>
-            Gets the value that specifies how the underlying class field should be treated when loading from a DBC storage.
-            </summary>
-        </member>
-        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.PropertyName">
-            <summary>
-            Gets or sets the name of of the property that should be used instead of the underlying class field.
-            Use it with <see cref="F:DBFilesClient.NET.StoragePresenceOption.UseProperty"/> value.
-            </summary>
-        </member>
-        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.ArraySize">
-            <summary>
-            Gets or sets the number of elements in the underlying array.
-            </summary>
-        </member>
         <member name="M:DBFilesClient.NET.Storage`1.#ctor">
             <summary>
             Initializes a new instance of <see cref="T:DBFilesClient.NET.Storage`1"/> class.
@@ -99,6 +69,41 @@
             This functionality is disabled by default. Use <see cref="F:DBFilesClient.NET.LoadFlags.LazyCStrings"/> to enable.
             </summary>
         </member>
+        <member name="F:DBFilesClient.NET.LoadFlags.LazyCStrings">
+            <summary>
+            Enables laziness of <see cref="T:DBFilesClient.NET.LazyCString"/>.
+            </summary>
+        </member>
+        <member name="T:DBFilesClient.NET.StoragePresenceAttribute">
+            <summary>
+            Controls how the field is treated by the DBC storage loader.
+            </summary>
+        </member>
+        <member name="M:DBFilesClient.NET.StoragePresenceAttribute.#ctor(DBFilesClient.NET.StoragePresenceOption)">
+            <summary>
+            Initializes a new instance of <see cref="T:DBFilesClient.NET.StoragePresenceAttribute"/>
+            with the specified <see cref="T:DBFilesClient.NET.StoragePresenceOption"/>.
+            </summary>
+            <param name="option">
+            Specifies how the underlying class field should be treated when loading from a DBC storage.
+            </param>
+        </member>
+        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.Option">
+            <summary>
+            Gets the value that specifies how the underlying class field should be treated when loading from a DBC storage.
+            </summary>
+        </member>
+        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.PropertyName">
+            <summary>
+            Gets or sets the name of of the property that should be used instead of the underlying class field.
+            Use it with <see cref="F:DBFilesClient.NET.StoragePresenceOption.UseProperty"/> value.
+            </summary>
+        </member>
+        <member name="P:DBFilesClient.NET.StoragePresenceAttribute.ArraySize">
+            <summary>
+            Gets or sets the number of elements in the underlying array.
+            </summary>
+        </member>
         <member name="T:DBFilesClient.NET.StoragePresenceOption">
             <summary>
             Specifies how a class field should be treated when loading from a DBC storage.
@@ -120,11 +125,6 @@
             Specifies that the DBC storage loader should use property instead.
             You should specify the <see cref="P:DBFilesClient.NET.StoragePresenceAttribute.PropertyName"/> property.
             The property should be of the same type as the field, and its setter should be public.
-            </summary>
-        </member>
-        <member name="F:DBFilesClient.NET.LoadFlags.LazyCStrings">
-            <summary>
-            Enables laziness of <see cref="T:DBFilesClient.NET.LazyCString"/>.
             </summary>
         </member>
     </members>

@@ -225,8 +225,6 @@ namespace SpellWork.Spell
                 //PowerType = dbcData.MiscEntry.PowerType;
                 RangeIndex = dbcData.MiscEntry.RangeIndex;
                 Speed = dbcData.MiscEntry.Speed;
-                SpellVisual[0] = dbcData.MiscEntry.SpellVisual[0];
-                SpellVisual[1] = dbcData.MiscEntry.SpellVisual[1];
                 SpellIconID = dbcData.MiscEntry.SpellIconID;
                 ActiveIconID = dbcData.MiscEntry.ActiveIconID;
                 SchoolMask = dbcData.MiscEntry.SchoolMask;
@@ -377,6 +375,13 @@ namespace SpellWork.Spell
                 EquippedItemClass = equippedItems.EquippedItemClass;
                 EquippedItemSubClassMask = equippedItems.EquippedItemSubClassMask;
                 EquippedItemInventoryTypeMask = equippedItems.EquippedItemInventoryTypeMask;
+            }
+
+            var visuals = dbcData.Visuals;
+            if (visuals != null)
+            {
+                SpellVisual[0] = visuals.SpellVisual[0];
+                SpellVisual[1] = visuals.SpellVisual[1];
             }
 
             Scaling = dbcData.Scaling;
