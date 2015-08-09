@@ -757,7 +757,7 @@ namespace SpellWork.Spell
         SPELL_AURA_392                                          = 392,
         SPELL_AURA_393                                          = 393,
         SPELL_AURA_REFLECT_SPELLS_IN_FRONT                      = 394,
-        SPELL_AURA_395                                          = 395,
+        SPELL_AURA_AREA_TRIGGER                                 = 395,
         SPELL_AURA_396                                          = 396,
         SPELL_AURA_397                                          = 397,
         SPELL_AURA_398                                          = 398,
