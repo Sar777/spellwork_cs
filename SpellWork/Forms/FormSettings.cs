@@ -48,7 +48,7 @@ namespace SpellWork.Forms
             _tbUser.Text = Settings.Default.User;
             _tbPass.Text = Settings.Default.Pass;
             _tbBase.Text = Settings.Default.WorldDbName;
-            _gbDbSetting.Enabled = _cbUseDBConnect.Checked = Settings.Default.UseDbConnect;
+            //_gbDbSetting.Enabled = _cbUseDBConnect.Checked = Settings.Default.UseDbConnect;
             _tbPath.Text = Settings.Default.DbcPath;
         }
 
@@ -60,16 +60,11 @@ namespace SpellWork.Forms
 
         private void _tbPathClick(object sender, EventArgs e)
         {
-            if (folderBrowserDialog1.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 Settings.Default.DbcPath = folderBrowserDialog1.SelectedPath;
                 Settings.Default.Save();
             }
-        }
-
-        private void _tbPathMouseHover(object sender, EventArgs e)
-        {
-            toolTip1.Show("Click to select folder path of dbcs", _tbPath);
         }
     }
 }
