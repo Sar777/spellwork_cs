@@ -63,8 +63,8 @@ namespace SpellWork.Spell
                 _rtb.AppendFormatLine("Category = {0}, SpellIconID = {1}, activeIconID = {2}, SpellVisual = ({3},{4})",
                     _spell.Category, _spell.SpellIconID, _spell.ActiveIconID, _spell.SpellVisual[0], _spell.SpellVisual[1]);
 
-                _rtb.AppendFormatLine("Family {0}, flag [0] 0x{1:X8} [1] 0x{2:X8} [2] 0x{3:X8} [3] 0x{4:X8}",
-                    (SpellFamilyNames)_spell.SpellFamilyName, _spell.SpellFamilyFlags[0], _spell.SpellFamilyFlags[1], _spell.SpellFamilyFlags[2], _spell.SpellFamilyFlags[3]);
+                _rtb.AppendFormatLine("Family {0} ({1}), flag [0] 0x{2:X8} [1] 0x{3:X8} [2] 0x{4:X8} [3] 0x{5:X8}",
+                    (SpellFamilyNames)_spell.SpellFamilyName, _spell.SpellFamilyName, _spell.SpellFamilyFlags[0], _spell.SpellFamilyFlags[1], _spell.SpellFamilyFlags[2], _spell.SpellFamilyFlags[3]);
 
                 _rtb.AppendLine();
 
@@ -554,7 +554,7 @@ namespace SpellWork.Spell
                     _rtb.Append((UnitMods)misc);
                     break;
                 case AuraType.SPELL_AURA_MOD_RATING:
-                case AuraType.SPELL_AURA_MOD_RATING_BONUS_PCT:
+                case AuraType.SPELL_AURA_MOD_RATING_PCT:
                     _rtb.Append((CombatRating)misc);
                     break;
                 case AuraType.SPELL_AURA_ADD_FLAT_MODIFIER:
@@ -564,7 +564,8 @@ namespace SpellWork.Spell
                 case AuraType.SPELL_AURA_MOD_TOTAL_STAT_PERCENTAGE:
                     _rtb.Append((Stats)misc);
                     break;
-                case AuraType.SPELL_AURA_MOD_INCREASE_POWER:
+                case AuraType.SPELL_AURA_MOD_MAX_POWER_FLAT:
+                case AuraType.SPELL_AURA_MOD_MAX_POWER_PCT:
                     _rtb.Append((Powers)misc);
                     break;
                 case AuraType.SPELL_AURA_MOD_SHAPESHIFT:
