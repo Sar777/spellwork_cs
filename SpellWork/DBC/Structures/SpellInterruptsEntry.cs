@@ -1,14 +1,16 @@
-﻿namespace SpellWork.DBC.Structures
+﻿using DBFilesClient.NET;
+
+namespace SpellWork.DBC.Structures
 {
     public sealed class SpellInterruptsEntry
     {
         public uint Id;
         public uint SpellId;                                      // 1  - Pandaria
         public uint Difficulty;                                   // 2  - Panadraia
-        public uint AuraInterruptFlags;
-        public uint Unknown1;
-        public uint ChannelInterruptFlags;
-        public uint Unknown2;
+        [StoragePresence(StoragePresenceOption.Include, ArraySize = 2)]
+        public uint[] AuraInterruptFlags;
+        [StoragePresence(StoragePresenceOption.Include, ArraySize = 2)]
+        public uint[] ChannelInterruptFlags;
         public uint InterruptFlags;
     }
 }

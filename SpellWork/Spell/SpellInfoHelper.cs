@@ -45,8 +45,8 @@ namespace SpellWork.Spell
         public uint RecoveryTime = 0;                                 // 29       m_recoveryTime
         public uint CategoryRecoveryTime = 0;                         // 30       m_categoryRecoveryTime
         public uint InterruptFlags = 0;                               // 31       m_interruptFlags
-        public uint AuraInterruptFlags = 0;                           // 32       m_auraInterruptFlags
-        public uint ChannelInterruptFlags = 0;                        // 33       m_channelInterruptFlags
+        public uint[] AuraInterruptFlags = new uint[2];               // 32       m_auraInterruptFlags
+        public uint[] ChannelInterruptFlags = new uint[2];            // 33       m_channelInterruptFlags
         public uint ProcFlags = 0;                                    // 34       m_procTypeMask
         public uint ProcChance = 0;                                   // 35       m_procChance
         public uint ProcCharges = 0;                                  // 36       m_procCharges
@@ -305,8 +305,13 @@ namespace SpellWork.Spell
             if (interrupts != null)
             {
                 InterruptFlags = interrupts.InterruptFlags;
-                AuraInterruptFlags = interrupts.AuraInterruptFlags;
-                ChannelInterruptFlags = interrupts.ChannelInterruptFlags;
+                AuraInterruptFlags = (uint[])interrupts.AuraInterruptFlags.Clone();
+                ChannelInterruptFlags = (uint[])interrupts.ChannelInterruptFlags.Clone();
+            }
+            else
+            {
+                AuraInterruptFlags = new uint[2];
+                ChannelInterruptFlags = new uint[2];
             }
 
             // SpellAuraOptions.dbc
